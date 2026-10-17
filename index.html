@@ -60,8 +60,8 @@
   .stats div:nth-child(1){background:var(--aqua)} .stats div:nth-child(2){background:var(--baby)} .stats div:nth-child(3){background:var(--lime)} .stats div:nth-child(4){background:#fff}
   .stats b{font-family:"Unbounded",sans-serif;font-weight:800;font-size:clamp(17px,1.5vw,24px);line-height:1.1;display:block;letter-spacing:-.03em}
   .stats span{font-family:"Space Mono",monospace;font-size:10.5px}
-  .collage{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:center;max-width:calc((100svh - var(--nav) - 70px) / 1.43);justify-self:end;width:100%}
-  .collage figure.p{aspect-ratio:3/4}
+  .collage{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:center;max-width:calc((100svh - var(--nav) - 64px) / 1.14);justify-self:end;width:100%}
+  .collage figure.p{aspect-ratio:4/3}
   .collage .a{grid-column:span 2}
   .collage figure{aspect-ratio:4/3;border:2px solid var(--neon);border-radius:16px;background:#fff}
   .collage figure img{object-fit:cover!important;object-position:center 30%}
@@ -107,7 +107,7 @@
   .role{position:sticky;top:calc(var(--nav) + 20px);background:var(--mint);border:2px solid var(--neon);border-radius:20px;padding:20px;box-shadow:6px 6px 0 var(--pink)}
   .role h3{font-family:"Unbounded",sans-serif;font-weight:800;font-size:clamp(24px,2vw,32px);letter-spacing:-.03em;margin-bottom:12px}
   .role ul{list-style:none}
-  .role li{padding:9px 0;border-top:1.5px dashed var(--neon);display:grid;grid-template-columns:100px 1fr;gap:10px;font-size:14.5px}
+  .role li{padding:9px 0;border-top:1.5px dashed var(--pink);display:grid;grid-template-columns:100px 1fr;gap:10px;font-size:14.5px}
   .role li b{font-family:"Space Mono",monospace;font-weight:700;font-size:11px;padding-top:2px}
   .note{font-size:14px;margin-top:12px}
 
@@ -131,7 +131,7 @@
   .about h2{font-size:clamp(46px,5.6vw,96px);line-height:.9;letter-spacing:-.05em}
   .about h2 + p{background:#fff;border:2px solid var(--neon);border-radius:16px;padding:16px}
   .about dl{display:grid;grid-template-columns:150px 1fr;border:2px solid var(--neon);border-radius:16px;overflow:hidden;background:#fff}
-  .about dt,.about dd{padding:11px 14px;border-bottom:1.5px dashed var(--neon)}
+  .about dt,.about dd{padding:11px 14px;border-bottom:1.5px dashed var(--pink)}
   .about dt{font-family:"Space Mono",monospace;font-size:11.5px;background:var(--mint)}
   .about dt:nth-of-type(3n+2){background:var(--baby)} .about dt:nth-of-type(3n){background:var(--lime)}
   .about dt:last-of-type,.about dd:last-of-type{border-bottom:0}
@@ -199,7 +199,7 @@
   </div>
   <div class="collage">
     <figure class="a"><img src="img/cover-p2_01.jpg" alt="Styling in Berlin: graffiti wall"><span class="stamp">BERLIN ★ 2026</span></figure>
-    <figure class="p"><img src="img/cover-p3_01.jpg" alt="Car selfie with star doodles"></figure>
+    <figure class="p"><img src="img/cover-p3_01.jpg" alt="Car selfie with star doodles" style="object-position:50% 5%"></figure>
     <figure class="p"><img src="img/cover-p1_01.jpg" alt="U-Bahn graphic edit" style="object-position:62% 50%"></figure>
   </div>
 </div></header>
