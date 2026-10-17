@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suki Seo — Styling &amp; Creative Direction</title>
+<meta name="description" content="Misuk (Suki) Seo — stylist, buyer and creative director from Seoul, now in Berlin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+  :root{--paper:#f3f0e9;--ink:#191816;--muted:#76726a;--line:#d9d4c9;--lilac:#b9a6e8;--lilac-soft:#ebe5f8;--mint:#9fd8c8;--nav:60px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:var(--nav)}
+  body{background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  img,video{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{max-width:1840px;margin:0 auto;padding:0 clamp(14px,2.2vw,36px)}
+  .serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:-.01em}
+  .mono{font-family:"DM Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+
+  nav{position:sticky;top:0;z-index:20;height:var(--nav);background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .logo{font-family:"Instrument Serif",serif;font-size:26px;text-decoration:none;font-style:italic}
+  nav ul{display:flex;gap:24px;list-style:none}
+  nav ul a{text-decoration:none;font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  nav ul a:hover{color:var(--muted)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;background:var(--ink);color:var(--paper);text-decoration:none;font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--ink)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn:hover{background:var(--lilac);border-color:var(--lilac);color:var(--ink)}
+
+  /* cover */
+  .cover{height:calc(100svh - var(--nav));min-height:620px;display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(18px,3vw,48px);align-items:stretch;padding-top:22px;padding-bottom:22px}
+  .cover .text{display:flex;flex-direction:column;justify-content:space-between;padding:8px 0}
+  .cover h1{font-size:clamp(76px,11vw,200px);line-height:.86;font-style:italic}
+  .cover h1 span{display:block;font-style:normal}
+  .cover .lead{font-size:clamp(17px,1.35vw,21px);max-width:560px;margin-top:22px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .tag{font-family:"DM Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;padding:6px 11px;border:1px solid var(--ink);border-radius:99px}
+  .cover .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+  .collage{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;min-height:0}
+  .collage figure{min-height:0}
+  .collage .a{grid-row:span 2;grid-column:span 2}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);margin-top:20px}
+  .stats div{padding:12px 12px 0 0}
+  .stats b{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(28px,2.6vw,44px);line-height:1;display:block}
+  .stats span{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+  /* sections */
+  section{padding:64px 0}
+  .head{display:grid;grid-template-columns:200px 1fr auto;gap:24px;align-items:end;border-top:1px solid var(--ink);padding-top:14px;margin-bottom:26px}
+  .head .no{font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;align-self:start;padding-top:10px}
+  .head h2{font-size:clamp(48px,6.4vw,112px);line-height:.9;font-style:italic}
+  .head p{max-width:520px;color:#3b3934;font-size:15.5px}
+
+  figure{position:relative;background:#e6e1d6;border-radius:6px;overflow:hidden}
+  figure img,figure video{width:100%;height:100%;object-fit:contain}
+  figure img{cursor:zoom-in}
+  figcaption{position:absolute;left:8px;bottom:8px;font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;background:rgba(243,240,233,.9);padding:3px 8px;border-radius:99px}
+  /* masonry: natural aspect, never cropped */
+  .masonry{columns:5 260px;column-gap:10px}
+  .masonry>*{break-inside:avoid;margin-bottom:10px}
+  .masonry figure{background:transparent}
+  .masonry figure img,.masonry figure video{height:auto}
+  .vid{position:relative;border-radius:6px;overflow:hidden;background:#e6e1d6}
+  .vid video{width:100%;height:auto;cursor:zoom-in}
+  .vexp{position:absolute;top:8px;right:8px;z-index:3;width:32px;height:32px;border-radius:99px;border:0;background:rgba(25,24,22,.6);color:#fff;font-size:14px;cursor:pointer;display:grid;place-items:center}
+
+  .split{display:grid;grid-template-columns:minmax(260px,420px) 1fr;gap:clamp(18px,3vw,48px);align-items:start}
+  .role{position:sticky;top:calc(var(--nav) + 20px)}
+  .role h3{font-size:clamp(30px,2.6vw,44px);line-height:1;font-style:italic;margin-bottom:14px}
+  .role ul{list-style:none;border-top:1px solid var(--line)}
+  .role li{padding:10px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:110px 1fr;gap:12px;font-size:15px}
+  .role li b{font-family:"DM Mono",monospace;font-weight:400;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+  .note{font-size:14px;color:var(--muted);margin-top:14px}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .card{border:1px solid var(--ink);border-radius:8px;padding:18px;background:#f8f6f1}
+  .card .mono{color:var(--muted)}
+  .card h4{font-family:"Instrument Serif",serif;font-weight:400;font-size:30px;line-height:1.05;margin:8px 0}
+  .card p{font-size:15px}
+  .card.lilac{background:var(--lilac-soft)}
+
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,56px)}
+  .about h2{font-size:clamp(52px,6vw,104px);line-height:.92;font-style:italic}
+  .about dl{display:grid;grid-template-columns:160px 1fr;border-top:1px solid var(--ink)}
+  .about dt,.about dd{padding:12px 0;border-bottom:1px solid var(--line)}
+  .about dt{font-family:"DM Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:15px}
+  footer{background:var(--ink);color:var(--paper);padding:70px 0 34px;margin-top:40px}
+  footer h2{font-size:clamp(56px,8vw,150px);line-height:.88;font-style:italic}
+  footer .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  footer .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+  footer .btn.ghost{background:transparent;color:var(--paper)}
+  footer small{display:block;margin-top:46px;font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.6}
+
+  /* lightbox */
+  #lb{position:fixed;inset:0;z-index:100;background:rgba(18,17,15,.94);display:none;align-items:center;justify-content:center;padding:56px 72px}
+  #lb.open{display:flex}
+  #lb img,#lb video{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px}
+  #lb video{display:none;background:#000}
+  #lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:99px;width:46px;height:46px;font-size:22px;cursor:pointer;display:grid;place-items:center}
+  #lb .x{top:16px;right:16px} #lb .prev{left:14px;top:50%;transform:translateY(-50%)} #lb .next{right:14px;top:50%;transform:translateY(-50%)}
+  #lb .cap{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#d9d6cf;font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.06em}
+
+  html.js .reveal:not(.in){opacity:0;transform:translateY(20px)}
+  .reveal{transition:opacity .8s ease,transform .8s ease}
+  @media (prefers-reduced-motion:reduce){.reveal{transition:none}html.js .reveal:not(.in){opacity:1;transform:none}}
+
+  @media (max-width:900px){
+    nav ul{display:none}
+    .cover{height:auto;min-height:0;grid-template-columns:1fr}
+    .collage{height:110vw}
+    .stats{grid-template-columns:1fr 1fr}
+    .head{grid-template-columns:1fr;gap:6px}
+    .split,.about{grid-template-columns:1fr}
+    .role{position:static}
+    .cards{grid-template-columns:1fr}
+    .masonry{columns:2 140px}
+    #lb{padding:56px 10px}#lb .prev,#lb .next{top:auto;bottom:12px;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="wrap">
+  <a class="logo" href="#top">Suki Seo</a>
+  <ul>
+    <li><a href="#styling">Styling</a></li>
+    <li><a href="#hippiedippy">hippiedippy</a></li>
+    <li><a href="#campaigns">Campaigns</a></li>
+    <li><a href="#identity">Identity</a></li>
+    <li><a href="#markets">Markets</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <a class="btn" href="https://www.instagram.com/b02_apt" target="_blank">DM @b02_apt</a>
+</div></nav>
+
+<header id="top"><div class="wrap cover">
+  <div class="text">
+    <div>
+      <div class="mono">Stylist · Buyer · Creative director — Berlin</div>
+      <h1 class="serif" style="margin-top:18px">Suki<span>Seo</span></h1>
+      <p class="lead">For 4.5 years I ran the Seoul online select shop <b>hippiedippy</b>: I picked the clothes, styled every look, modeled, shot, designed the campaigns and grew our Instagram 4×. Now I'm in Berlin and I'd love to bring that eye to your shop.</p>
+      <div class="tags"><span class="tag">Styling</span><span class="tag">Buying &amp; curation</span><span class="tag">Modeling</span><span class="tag">Visual merchandising</span><span class="tag">Instagram &amp; content</span><span class="tag">Customer care</span></div>
+      <div class="cta"><a class="btn" href="#styling">See the looks ↓</a><a class="btn ghost" href="mailto:sms940574@gmail.com">sms940574@gmail.com</a></div>
+    </div>
+    <div class="stats">
+      <div><b>4.5 yrs</b><span>Brand director</span></div>
+      <div><b>20k→80k</b><span>Instagram</span></div>
+      <div><b>Every look</b><span>Picked &amp; styled</span></div>
+      <div><b>Every season</b><span>Concept &amp; campaign</span></div>
+    </div>
+  </div>
+  <div class="collage">
+    <figure class="a"><img src="img/l041.jpg" alt="Styling: plaid blouse and khaki skirt"></figure>
+    <figure><img src="img/h014.jpg" alt="hippiedippy lookbook"></figure>
+    <figure><img src="img/i146.jpg" alt="Street styling"></figure>
+  </div>
+</div></header>
+
+<section id="styling"><div class="wrap">
+  <div class="head reveal"><div class="no">01 — Styling</div><h2 class="serif">Looks</h2><p>Every outfit here was put together, modeled and art-directed by me — for hippiedippy and for my own work. Layering, texture and a little bit of strange.</p></div>
+  <div class="masonry">
+    <figure><img loading="lazy" src="img/l018.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/h013.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/l030.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/i068.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/l050.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/h021.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/i040.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/l005.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/i148.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/h020.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/i064.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/l036.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/h038.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/i081.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/h026.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/l013.jpg" alt="Look: striped tights"></figure>
+    <figure><img loading="lazy" src="img/i021.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/h069.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/l024.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/i069.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/h016.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/i051.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/h012.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/h015.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/h022.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/h006.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/h002.jpg" alt="Look"></figure>
+    <figure><img loading="lazy" src="img/h019.jpg" alt="Look"></figure>
+  </div>
+</div></section>
+
+<section id="hippiedippy"><div class="wrap">
+  <div class="head reveal"><div class="no">02 — hippiedippy</div><h2 class="serif">The shop</h2><p>An online select shop in Seoul. I was its brand director from 2021 to 2025 and did a bit of everything — which is exactly what a small shop needs.</p></div>
+  <div class="split">
+    <div class="role reveal">
+      <h3 class="serif">What I did</h3>
+      <ul>
+        <li><b>Concept</b><span>Set the mood and story for every season</span></li>
+        <li><b>Buying</b><span>Selected and bought the product range</span></li>
+        <li><b>Styling</b><span>Styled every look for the lookbook and product pages</span></li>
+        <li><b>Modeling</b><span>Modeled in all lookbook and product shoots</span></li>
+        <li><b>Visuals</b><span>Posters, motion graphics and short videos</span></li>
+        <li><b>Instagram</b><span>Grew it from about 20,000 to 80,000+ followers</span></li>
+        <li><b>Writing</b><span>All product descriptions and posts</span></li>
+        <li><b>Customers</b><span>Inquiries, orders, packing and shipping (Cafe24)</span></li>
+      </ul>
+      <p class="note">Instagram: <a href="https://www.instagram.com/hippiedippy.kr/" target="_blank">@hippiedippy.kr</a></p>
+    </div>
+    <div class="masonry" style="columns:4 220px">
+      <figure><img loading="lazy" src="img/h075.jpg" alt="Product styling"></figure>
+      <figure><img loading="lazy" src="img/h078.jpg" alt="Product styling"></figure>
+      <figure><img loading="lazy" src="img/h083.jpg" alt="Product styling"></figure>
+      <figure><img loading="lazy" src="img/h076.jpg" alt="Product styling"></figure>
+      <figure><img loading="lazy" src="img/h071.jpg" alt="Product styling"></figure>
+      <figure><img loading="lazy" src="img/h079.jpg" alt="Product styling"></figure>
+      <figure><img loading="lazy" src="img/h084.jpg" alt="Product styling"></figure>
+      <figure><img loading="lazy" src="img/h077.jpg" alt="Product styling"></figure>
+      <figure><img loading="lazy" src="img/h072.jpg" alt="Product styling"></figure>
+      <figure><img loading="lazy" src="img/h080.jpg" alt="Product styling"></figure>
+      <figure><img loading="lazy" src="img/h067.jpg" alt="Product styling"></figure>
+      <figure><img loading="lazy" src="img/h081.jpg" alt="Product styling"></figure>
+      <figure><img loading="lazy" src="img/h068.jpg" alt="Product styling"></figure>
+    </div>
+  </div>
+</div></section>
+
+<section id="campaigns"><div class="wrap">
+  <div class="head reveal"><div class="no">03 — Campaigns</div><h2 class="serif">Seasons</h2><p>Each season and sale got its own small world: a concept, a poster and a short motion piece for Instagram. Designed and edited by me.</p></div>
+  <div class="masonry">
+    <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/summer-sale.mp4"></video></div>
+    <figure><img loading="lazy" src="img/h027.jpg" alt="Summer sale poster"><figcaption>Summer sale</figcaption></figure>
+    <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/black-friday.mp4"></video></div>
+    <figure><img loading="lazy" src="img/h025.jpg" alt="Black Friday poster"><figcaption>Black Friday</figcaption></figure>
+    <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/season-off.mp4"></video></div>
+    <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/welcome-spring.mp4"></video></div>
+    <figure><img loading="lazy" src="img/h008.jpg" alt="Season off poster"><figcaption>Season off</figcaption></figure>
+    <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/summer-vacation.mp4"></video></div>
+    <figure><img loading="lazy" src="img/h082.jpg" alt="Season off visual"></figure>
+    <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/spring-sale.mp4"></video></div>
+    <figure><img loading="lazy" src="img/h031.jpg" alt="Black Friday poster"></figure>
+    <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/lookbook-film.mp4"></video></div>
+    <figure><img loading="lazy" src="img/h063.jpg" alt="Christmas visual"><figcaption>Christmas</figcaption></figure>
+    <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/natsu.mp4"></video></div>
+    <figure><img loading="lazy" src="img/h058.jpg" alt="Q&amp;A post"></figure>
+    <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/cake.mp4"></video></div>
+    <figure><img loading="lazy" src="img/h037.jpg" alt="Spring visual"></figure>
+  </div>
+</div></section>
+
+<section id="identity"><div class="wrap">
+  <div class="head reveal"><div class="no">04 — Identity</div><h2 class="serif">Logos &amp; drawings</h2><p>Lettering, 3D logos, patterns and hand-drawn characters made for the brand — in Procreate, CapCut and Blender.</p></div>
+  <div class="masonry">
+    <figure><img loading="lazy" src="img/h010.jpg" alt="Clay logo"></figure>
+    <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/logo3d.mp4"></video></div>
+    <figure><img loading="lazy" src="img/h033.jpg" alt="Spiral logo"></figure>
+    <figure><img loading="lazy" src="img/h040.jpg" alt="Illustration"></figure>
+    <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/logo-ring.mp4"></video></div>
+    <figure><img loading="lazy" src="img/h009.jpg" alt="Emblem"></figure>
+    <figure><img loading="lazy" src="img/h004.jpg" alt="Logo"></figure>
+    <figure><img loading="lazy" src="img/h042.jpg" alt="Illustration"></figure>
+    <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/turntable.mp4"></video></div>
+    <figure><img loading="lazy" src="img/h064.jpg" alt="Pattern"></figure>
+    <figure><img loading="lazy" src="img/h007.jpg" alt="3D objects"></figure>
+    <figure><img loading="lazy" src="img/h044.jpg" alt="Illustration"></figure>
+    <figure><img loading="lazy" src="img/h090.jpg" alt="Drawing"></figure>
+    <figure><img loading="lazy" src="img/h028.jpg" alt="3D object"></figure>
+    <figure><img loading="lazy" src="img/h041.jpg" alt="Illustration"></figure>
+    <figure><img loading="lazy" src="img/h045.jpg" alt="Illustration"></figure>
+  </div>
+</div></section>
+
+<section id="markets"><div class="wrap">
+  <div class="head reveal"><div class="no">05 — Markets</div><h2 class="serif">Flea markets</h2><p>Selling in person is my favourite part: talking to people, reading what they like, and finding the piece that's theirs.</p></div>
+  <div class="cards reveal">
+    <div class="card lilac">
+      <span class="mono">Hannam-dong, Seoul · with friends</span>
+      <h4>Pop-up flea market at bar Choneungryeok</h4>
+      <p>My idea. I led a team of three and partnered with the bar to host it. The place was packed — and I sold almost everything I brought.</p>
+    </div>
+    <div class="card">
+      <span class="mono">hippiedippy · 2021</span>
+      <h4>Summer flea market &amp; sample sale</h4>
+      <p>Vintage pieces and samples. I made the posters and the 3D type motion for the announcement.</p>
+    </div>
+    <div class="card">
+      <span class="mono">hippiedippy · Oct 2021</span>
+      <h4>Knit flea market</h4>
+      <p>A knit-themed market. I designed the visual and the motion teaser.</p>
+    </div>
+  </div>
+  <div class="masonry" style="margin-top:12px;columns:4 220px">
+    <figure><img loading="lazy" src="img/flea-top.jpg" alt="Flea market poster: tops"></figure>
+    <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/flea-type.mp4"></video></div>
+    <figure><img loading="lazy" src="img/flea-bottom.jpg" alt="Flea market poster: bottoms"></figure>
+    <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/knit-flea.mp4"></video></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap about">
+  <div class="reveal">
+    <div class="mono">06 — About</div>
+    <h2 class="serif" style="margin-top:14px">Hi, I'm Suki.</h2>
+    <p style="margin-top:18px;max-width:560px;font-size:17px">I studied Fashion Industry in Incheon, worked the floor at Polo Ralph Lauren and SNKRS Hongdae, then spent 4.5 years building hippiedippy. Lately I've also been making games — but clothes, people and shops are where I started. I'm looking for a place in Berlin where I can style, sell, shoot and help a shop look like itself.</p>
+    <p class="note">Also: <a href="https://sms940574.github.io/portfolio/" target="_blank">my game design portfolio ↗</a></p>
+  </div>
+  <dl class="reveal">
+    <dt>Based in</dt><dd>Berlin · Working Holiday Visa (full work permission)</dd>
+    <dt>Open to</dt><dd>Vintage &amp; concept stores, small brands — sales floor, styling, visual merchandising, shoots, Instagram</dd>
+    <dt>Experience</dt><dd>hippiedippy, brand director (2021–2025) · SNKRS Hongdae, sales (2019–2021) · Polo Ralph Lauren, sales (2018)</dd>
+    <dt>Education</dt><dd>B.A. Fashion Industry, Incheon National University</dd>
+    <dt>Tools</dt><dd>Procreate, CapCut, Blender, Cafe24, Instagram</dd>
+    <dt>Languages</dt><dd>Korean (native) · English (A2, improving) · Japanese (basic)</dd>
+  </dl>
+</div></section>
+
+<footer><div class="wrap">
+  <h2 class="serif">Let's talk clothes.</h2>
+  <div class="row">
+    <a class="btn" href="https://www.instagram.com/b02_apt" target="_blank">Instagram DM @b02_apt</a>
+    <a class="btn ghost" href="mailto:sms940574@gmail.com">sms940574@gmail.com</a>
+  </div>
+  <small>Misuk (Suki) Seo · Berlin · 2026</small>
+</div></footer>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Viewer">
+  <button class="x" aria-label="Close">✕</button>
+  <button class="prev" aria-label="Previous">‹</button>
+  <img alt="">
+  <video controls playsinline loop></video>
+  <button class="next" aria-label="Next">›</button>
+  <div class="cap"></div>
+</div>
+
+<script>
+  setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')),2500);
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  const vo=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().catch(()=>{})}else{v.pause()}}),{threshold:.2});
+  document.querySelectorAll('video[autoplay]').forEach(v=>{v.removeAttribute('autoplay');vo.observe(v)});
+
+  // lightbox for photos and videos
+  (function(){
+    const lb=document.getElementById('lb'), im=lb.querySelector('img'), lv=lb.querySelector('video'), cap=lb.querySelector('.cap');
+    const vids=[...document.querySelectorAll('.vid video')];
+    vids.forEach(v=>{const b=document.createElement('button');b.className='vexp';b.type='button';b.setAttribute('aria-label','View larger');b.textContent='⛶';v.parentElement.appendChild(b);b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();open(v)})});
+    const items=scope=>[...scope.querySelectorAll('figure img, .vid video')].filter(el=>!el.closest('#lb'));
+    let group=[],idx=0;
+    const isVid=()=>group[idx]&&group[idx].tagName==='VIDEO';
+    const show=()=>{const el=group[idx]; lv.pause();
+      if(el.tagName==='VIDEO'){im.style.display='none';lv.style.display='block';lv.src=el.currentSrc||el.src;lv.muted=false;lv.play().catch(()=>{lv.muted=true;lv.play().catch(()=>{})})}
+      else{lv.removeAttribute('src');lv.load();lv.style.display='none';im.style.display='block';im.src=el.currentSrc||el.src;im.alt=el.alt||''}
+      const fc=el.closest('figure')?.querySelector('figcaption'); cap.textContent=(fc?fc.textContent+' · ':'')+(idx+1)+' / '+group.length;};
+    function open(el){const scope=el.closest('section,header')||document; group=items(scope); idx=Math.max(0,group.indexOf(el)); show(); lb.classList.add('open'); document.body.style.overflow='hidden'}
+    const close=()=>{lv.pause();lv.removeAttribute('src');lv.load();lb.classList.remove('open');document.body.style.overflow=''};
+    const step=d=>{idx=(idx+d+group.length)%group.length;show()};
+    document.addEventListener('click',e=>{const t=e.target;if(t.closest('#lb'))return;
+      if(t.tagName==='IMG'&&t.closest('figure')){e.preventDefault();open(t)} else if(t.tagName==='VIDEO'&&vids.includes(t)){e.preventDefault();open(t)}});
+    lb.addEventListener('click',e=>{if(e.target===lb||e.target===im||e.target.classList.contains('x'))close()});
+    lb.querySelector('.prev').addEventListener('click',e=>{e.stopPropagation();step(-1)});
+    lb.querySelector('.next').addEventListener('click',e=>{e.stopPropagation();step(1)});
+    addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;
+      if(e.key==='Escape')close(); else if(e.key===' '&&isVid()){lv.paused?lv.play():lv.pause()} else if(e.key==='ArrowRight'||e.key===' ')step(1); else if(e.key==='ArrowLeft')step(-1); else return;
+      e.preventDefault();e.stopImmediatePropagation()},true);
+    let sx=null; lb.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+    lb.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)step(dx<0?1:-1);sx=null});
+  })();
+
+  // Space / PageUp / PageDown: one page at a time, landing on section starts
+  (function(){
+    const NAV=60,EPS=4;
+    const abs=el=>{let y=0;for(let e=el;e;e=e.offsetParent)y+=e.offsetTop;return y};
+    const points=()=>{const max=document.documentElement.scrollHeight-innerHeight;
+      const ys=[...document.querySelectorAll('#top,section,footer')].map(el=>el.id==='top'?0:abs(el)-NAV); ys.push(0,max);
+      return [...new Set(ys.map(y=>Math.max(0,Math.min(y,max))))].sort((a,b)=>a-b)};
+    let target=null,timer=null;
+    addEventListener('keydown',e=>{const t=e.target;
+      if(t&&(t.isContentEditable||/^(INPUT|TEXTAREA|SELECT|BUTTON|VIDEO)$/.test(t.tagName)))return;
+      if(e.metaKey||e.ctrlKey||e.altKey)return;
+      let dir=0; if(e.key===' ')dir=e.shiftKey?-1:1; else if(e.key==='PageDown')dir=1; else if(e.key==='PageUp')dir=-1; if(!dir)return;
+      e.preventDefault(); const cur=target??scrollY,page=innerHeight-NAV,pts=points(); let next;
+      if(dir>0){const p=pts.find(y=>y>cur+EPS); next=(p===undefined)?cur+page:(p<=cur+page+100?p:cur+page)}
+      else{const p=[...pts].reverse().find(y=>y<cur-EPS); next=(p===undefined)?cur-page:(p>=cur-page-100?p:cur-page)}
+      next=Math.max(0,Math.min(next,document.documentElement.scrollHeight-innerHeight)); target=next; scrollTo({top:next,behavior:'smooth'});
+      clearTimeout(timer); timer=setTimeout(()=>target=null,700)});
+  })();
+</script>
+</body>
+</html>
