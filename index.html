@@ -193,6 +193,12 @@
   @media (prefers-reduced-motion:reduce){.danke-txt span,.sticker{animation:none}}
   @media (max-width:600px){.danke{border-radius:28px}.sticker{font-size:24px}}
 
+  .energy{position:relative;display:inline-block;font-weight:700;color:var(--ink);padding:0 4px;background:linear-gradient(transparent 52%,var(--lime) 52%,var(--lime) 90%,transparent 90%);animation:wiggle 2.8s ease-in-out infinite}
+  .energy i{position:absolute;right:-12px;top:-12px;font-style:normal;font-size:16px;color:var(--pink);-webkit-text-stroke:.5px var(--ink);animation:twinkle 1.4s ease-in-out infinite}
+  @keyframes wiggle{0%,100%{transform:rotate(0)}10%{transform:rotate(-3deg)}20%{transform:rotate(3deg)}30%{transform:rotate(0)}}
+  @keyframes twinkle{0%,100%{transform:scale(.7) rotate(0);opacity:.6}50%{transform:scale(1.25) rotate(25deg);opacity:1}}
+  @media (prefers-reduced-motion:reduce){.energy,.energy i{animation:none}}
+
   .reveal{transition:opacity .8s ease,transform .8s ease}
   @media (prefers-reduced-motion:reduce){.reveal{transition:none}html.js .reveal:not(.in){opacity:1;transform:none}.marquee div{animation:none}}
 
@@ -232,7 +238,7 @@
     <div style="display:flex;flex-direction:column;gap:16px">
       <div class="kicker">Stylist · Buyer · Creative director — Berlin</div>
       <h1 class="display">Suki<span>Seo</span></h1>
-      <p class="lead">Hi, I'm Suki — a stylist and creative director from Seoul, now in Berlin. I've worked in fashion my whole career and studied fashion and art. For 4.5 years I built the select shop <b>hippiedippy</b>, and with friends all in fashion, I was always part of events, pop-ups and flea markets. Berlin is where fashion, art and subculture meet — I want to start again here with new energy.</p>
+      <p class="lead">Hi, I'm Suki — a stylist and creative director from Seoul, now in Berlin. I've worked in fashion my whole career and studied fashion and art. For 4.5 years I built the select shop <b>hippiedippy</b>, and with friends all in fashion, I was always part of events, pop-ups and flea markets. Berlin is where fashion, art and subculture meet — I want to start again here with <span class="energy">new energy<i>✦</i></span>.</p>
       <div class="tags"><span class="tag">Styling</span><span class="tag">Buying &amp; curation</span><span class="tag">Modeling</span><span class="tag">Visual merchandising</span><span class="tag">Instagram &amp; content</span><span class="tag">Customer care</span></div>
       <div class="cta"><a class="btn ghost" href="mailto:sms940574@gmail.com">sms940574@gmail.com</a></div>
     </div>
