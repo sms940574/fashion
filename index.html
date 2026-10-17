@@ -45,7 +45,7 @@
   .cover .text{display:flex;flex-direction:column;justify-content:center;gap:18px;background:#fff;border:2px solid var(--neon);border-radius:22px;padding:clamp(18px,2.4vw,34px);box-shadow:8px 8px 0 var(--aqua);position:relative}
   .cover .text::after{content:"";position:absolute;top:-2px;right:22px;width:64px;height:calc(100% + 4px);background:repeating-linear-gradient(90deg,var(--baby) 0 6px,#fff 6px 9px,var(--mint) 9px 13px,#fff 13px 16px,#d8d8d8 16px 19px,#fff 19px 22px);border-left:2px solid var(--neon);border-right:2px solid var(--neon);opacity:.95;pointer-events:none}
   .cover .text>*{position:relative;z-index:1;max-width:calc(100% - 80px)}
-  .cover h1{font-size:clamp(64px,8.6vw,160px);line-height:.86;letter-spacing:-.05em}
+  .cover h1{font-size:clamp(52px,min(7.6vw,14svh),150px);line-height:.86;letter-spacing:-.05em}
   .cover h1 span{display:block;color:var(--pink);-webkit-text-stroke:2px var(--ink)}
   .cover .lead{font-size:clamp(16px,1.25vw,19px);max-width:540px}
   .kicker{display:inline-flex;align-items:center;gap:8px;font-family:"Space Mono",monospace;font-size:12.5px;color:var(--pink)}
@@ -138,7 +138,7 @@
 
   .about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,56px)}
   .about h2{font-size:clamp(46px,5.6vw,96px);line-height:.9;letter-spacing:-.05em}
-  .about h2 + p{background:#fff;border:2px solid var(--neon);border-radius:16px;padding:16px}
+  .about h2 ~ p:not(.note){background:#fff;border:2px solid var(--neon);border-radius:16px;padding:16px}
   .about dl{display:grid;grid-template-columns:150px 1fr;border:2px solid var(--neon);border-radius:16px;overflow:hidden;background:#fff}
   .about dt,.about dd{padding:11px 14px;border-bottom:1.5px dashed var(--pink)}
   .about dt{font-family:"Space Mono",monospace;font-size:11.5px;background:var(--mint)}
@@ -212,7 +212,7 @@
     <div style="display:flex;flex-direction:column;gap:16px">
       <div class="kicker">Stylist · Buyer · Creative director — Berlin</div>
       <h1 class="display">Suki<span>Seo</span></h1>
-      <p class="lead">For 4.5 years I ran the Seoul online select shop <b>hippiedippy</b>: I picked the clothes, styled every look, modeled, shot, designed the campaigns and grew our Instagram 4×. Now I'm in Berlin and I'd love to bring that eye to your shop.</p>
+      <p class="lead">Hi, I'm Suki — a stylist and creative director from Seoul, now living in Berlin. For 4.5 years I ran the online select shop <b>hippiedippy</b>: I picked the clothes, styled every look, modeled, shot, designed the campaigns and grew our Instagram 4×. I'd love to bring that eye to your shop.</p>
       <div class="tags"><span class="tag">Styling</span><span class="tag">Buying &amp; curation</span><span class="tag">Modeling</span><span class="tag">Visual merchandising</span><span class="tag">Instagram &amp; content</span><span class="tag">Customer care</span></div>
       <div class="cta"><a class="btn" href="#hippiedippy">See the work ↓</a><a class="btn ghost" href="mailto:sms940574@gmail.com">sms940574@gmail.com</a></div>
     </div>
@@ -436,13 +436,14 @@
   <div class="reveal">
     <div class="kicker">04 — About</div>
     <h2 class="display" style="margin-top:14px">Hi, I'm Suki.</h2>
-    <p style="margin-top:18px;max-width:560px;font-size:17px">I studied Fashion Industry in Incheon, worked the floor at Polo Ralph Lauren and SNKRS Hongdae, then spent 4.5 years building hippiedippy. Lately I've also been making games — but clothes, people and shops are where I started. I'm looking for a place in Berlin where I can style, sell, shoot and help a shop look like itself.</p>
+    <p style="margin-top:18px;max-width:600px;font-size:17px">I've worked in fashion my whole career, and I studied fashion and art. For 4.5 years I built <b>hippiedippy</b>, a select shop in Seoul. Most of my friends work in fashion too, so I was always part of events, pop-ups and flea markets around the city — styling, selling and helping each other's brands.</p>
+    <p style="margin-top:12px;max-width:600px;font-size:17px">Berlin is where fashion, art and subculture meet, and I want to start again here with new energy. I'm looking for a shop where I can style, sell, shoot and help it look like itself.</p>
     <p class="note">Also: <a href="https://sms940574.github.io/portfolio/" target="_blank">my game design portfolio ↗</a></p>
   </div>
   <dl class="reveal">
     <dt>Based in</dt><dd>Berlin · Working Holiday Visa (full work permission)</dd>
     <dt>Open to</dt><dd>Vintage &amp; concept stores, small brands — sales floor, styling, visual merchandising, shoots, Instagram</dd>
-    <dt>Experience</dt><dd>hippiedippy, brand director (2021–2025) · SNKRS Hongdae, sales (2019–2021) · Polo Ralph Lauren, sales (2018)</dd>
+    <dt>Experience</dt><dd>hippiedippy, brand director (2021–2025) · Fashion retail in Seoul (2018–2021) · Events, pop-ups &amp; flea markets</dd>
     <dt>Education</dt><dd>B.A. Fashion Industry, Incheon National University</dd>
     <dt>Tools</dt><dd>Procreate, CapCut, Blender, Nomad Sculpt, Unity, Claude, Cafe24, Instagram</dd>
     <dt>Languages</dt><dd>Korean (native) · English (A2, improving) · Japanese (basic)</dd>
