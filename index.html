@@ -39,9 +39,12 @@
   .tag{font-family:"DM Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border:1.5px solid var(--ink);border-radius:99px;background:#fff}
   .tags .tag:nth-child(3n+1){background:var(--pink-soft)} .tags .tag:nth-child(3n+2){background:var(--yellow-soft)} .tags .tag:nth-child(3n){background:var(--mint-soft)}
   .cover .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-  .collage{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;min-height:0}
+  .collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:10px;min-height:0;align-content:center}
   .collage figure{min-height:0}
-  .collage .a{grid-row:span 2;grid-column:span 2}
+  .collage figure img{object-fit:cover!important;object-position:center 30%}
+  .collage .a{grid-column:span 2}
+  .collage figure{aspect-ratio:4/3;background:transparent;border-radius:16px}
+  .collage{max-width:calc((100svh - var(--nav) - 64px) / 1.14);justify-self:end;width:100%}
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:20px}
   .stats div{border-radius:14px;padding:12px!important} .stats div:nth-child(1){background:var(--pink-soft)} .stats div:nth-child(2){background:var(--yellow-soft)} .stats div:nth-child(3){background:var(--mint-soft)} .stats div:nth-child(4){background:var(--pink-soft)}
   .stats div{padding:12px 12px 0 0}
@@ -115,7 +118,7 @@
   @media (max-width:900px){
     nav ul{display:none}
     .cover{height:auto;min-height:0;grid-template-columns:1fr}
-    .collage{height:110vw}
+    .collage{height:auto;max-width:none}
     .stats{grid-template-columns:1fr 1fr}
     .head{grid-template-columns:1fr;gap:6px}
     .split,.about{grid-template-columns:1fr}
@@ -158,9 +161,9 @@
     </div>
   </div>
   <div class="collage">
-    <figure class="a"><img src="img/l041.jpg" alt="Styling: plaid blouse and khaki skirt"></figure>
-    <figure><img src="img/h014.jpg" alt="hippiedippy lookbook"></figure>
-    <figure><img src="img/i146.jpg" alt="Street styling"></figure>
+    <figure class="a"><img src="img/cover-p2_01.jpg" alt="Styling in Berlin: graffiti wall"></figure>
+    <figure><img src="img/cover-p1_04.jpg" alt="Styling in Berlin: U-Bahn platform"></figure>
+    <figure><img src="img/cover-p1_09.jpg" alt="Styling in Berlin: yellow U-Bahn"></figure>
   </div>
 </div></header>
 
