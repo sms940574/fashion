@@ -100,7 +100,9 @@
   .masonry>*:nth-child(4n+3){box-shadow:5px 5px 0 var(--lime)}
   .masonry>*:nth-child(4n){box-shadow:5px 5px 0 var(--pink)}
   .masonry>figure.sm{width:60%;margin-left:auto;margin-right:auto}
-  .masonry>figure.xs{width:34%;margin-left:auto;margin-right:auto}
+  .trio{display:flex;gap:8px;justify-content:center;box-shadow:none!important}
+  .trio>figure{flex:1;max-width:30%}
+  .trio>figure img{height:auto}
   .vid{position:relative;border-radius:12px;overflow:hidden;background:#fff;border:2px solid var(--neon)}
   .vid video{width:100%;height:auto;cursor:zoom-in}
   .vexp{position:absolute;top:8px;right:8px;z-index:3;width:32px;height:32px;border-radius:99px;border:1.5px solid var(--neon);background:var(--lime);color:var(--ink);font-size:14px;cursor:pointer;display:grid;place-items:center}
@@ -325,7 +327,6 @@
     <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/spring-sale.mp4"></video></div>
     <figure><img loading="lazy" src="img/h031.jpg" alt="Black Friday poster"></figure>
     <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/lookbook-film.mp4"></video></div>
-    <figure><img loading="lazy" src="img/h063.jpg" alt="Christmas visual"><figcaption>Christmas</figcaption></figure>
     <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/natsu.mp4"></video></div>
     <figure><img loading="lazy" src="img/h058.jpg" alt="Q&amp;A post"></figure>
     <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/cake.mp4"></video></div>
@@ -338,8 +339,8 @@
     <figure><img loading="lazy" src="img/h009.jpg" alt="Emblem"></figure>
     <figure><img loading="lazy" src="img/h004.jpg" alt="Logo"></figure>
     <figure><img loading="lazy" src="img/h042.jpg" alt="Illustration"></figure>
+    <div class="trio"><figure><img loading="lazy" src="img/h064.jpg" alt="Pattern"></figure><figure><img loading="lazy" src="img/h065.jpg" alt="hippiedippy graphic"></figure><figure><img loading="lazy" src="img/h066.jpg" alt="hippiedippy graphic"></figure></div>
     <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/turntable.mp4"></video></div>
-    <figure class="xs"><img loading="lazy" src="img/h064.jpg" alt="Pattern"></figure>
     <figure><img loading="lazy" src="img/h007.jpg" alt="3D objects"></figure>
     <figure><img loading="lazy" src="img/h044.jpg" alt="Illustration"></figure>
     <figure><img loading="lazy" src="img/drawing-anim.gif" alt="Animated drawing"></figure>
@@ -374,14 +375,13 @@
     <figure><img loading="lazy" src="img/h060.jpg" alt="hippiedippy graphic"></figure>
     <figure><img loading="lazy" src="img/h061.jpg" alt="hippiedippy graphic"></figure>
     <figure><img loading="lazy" src="img/h062.jpg" alt="hippiedippy graphic"></figure>
-    <figure class="xs"><img loading="lazy" src="img/h065.jpg" alt="hippiedippy graphic"></figure>
-    <figure class="xs"><img loading="lazy" src="img/h066.jpg" alt="hippiedippy graphic"></figure>
     <figure><img loading="lazy" src="img/h073.jpg" alt="hippiedippy graphic"></figure>
     <figure><img loading="lazy" src="img/h085.jpg" alt="hippiedippy graphic"></figure>
     <figure><img loading="lazy" src="img/h086.jpg" alt="hippiedippy graphic"></figure>
     <figure><img loading="lazy" src="img/h087.jpg" alt="hippiedippy graphic"></figure>
     <figure><img loading="lazy" src="img/h088.jpg" alt="hippiedippy graphic"></figure>
     <figure><img loading="lazy" src="img/h089.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h063.jpg" alt="Christmas visual"><figcaption>Christmas</figcaption></figure>
   </div>
 </div></section>
 
@@ -485,7 +485,7 @@
     const KEY='suki-fashion-remove'; let set;
     try{set=new Set(JSON.parse(localStorage.getItem(KEY)||'[]'))}catch(_){set=new Set()}
     const save=()=>{try{localStorage.setItem(KEY,JSON.stringify([...set]))}catch(_){} document.getElementById('ed-n').textContent=set.size+' selected'};
-    const items=[...document.querySelectorAll('.masonry>figure,.masonry>.vid,.collage>figure')];
+    const items=[...document.querySelectorAll('.masonry>figure,.masonry>.vid,.collage>figure,.trio>figure')];
     const keyOf=el=>{const m=el.querySelector('img,video');return (m.getAttribute('src')||'').split('/').pop()};
     items.forEach(el=>{const k=keyOf(el); if(!k)return; el.classList.toggle('ed-off',set.has(k));
       const b=document.createElement('button'); b.className='ed-x'; b.type='button'; b.textContent='✕'; b.title='Mark for removal';
@@ -505,7 +505,7 @@
     const KEY='suki-fashion-remove'; let set;
     try{set=new Set(JSON.parse(localStorage.getItem(KEY)||'[]'))}catch(_){set=new Set()}
     const save=()=>{try{localStorage.setItem(KEY,JSON.stringify([...set]))}catch(_){} document.getElementById('ed-n').textContent=set.size+' selected'};
-    const items=[...document.querySelectorAll('.masonry>figure,.masonry>.vid,.collage>figure')];
+    const items=[...document.querySelectorAll('.masonry>figure,.masonry>.vid,.collage>figure,.trio>figure')];
     const keyOf=el=>{const m=el.querySelector('img,video');return (m.getAttribute('src')||'').split('/').pop()};
     items.forEach(el=>{const k=keyOf(el); if(!k)return; el.classList.toggle('ed-off',set.has(k));
       const b=document.createElement('button'); b.className='ed-x'; b.type='button'; b.textContent='✕'; b.title='Mark for removal';
