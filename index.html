@@ -120,6 +120,8 @@
   .more-grid{margin-top:26px;text-align:left}
 
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .cards.four{grid-template-columns:repeat(4,1fr)}
+  .cards .card:nth-child(4){background:var(--aqua)}
   .card{border:2px solid var(--neon);border-radius:20px;padding:20px;box-shadow:6px 6px 0 var(--pink)}
   .cards .card:nth-child(1){background:var(--baby)} .cards .card:nth-child(2){background:var(--mint)} .cards .card:nth-child(3){background:var(--lime)}
   .card .mono{font-size:11.5px}
@@ -176,7 +178,7 @@
     .head{grid-template-columns:1fr}.head p{justify-self:start}
     .split,.about{grid-template-columns:1fr}
     .role{position:static}
-    .cards{grid-template-columns:1fr}
+    .cards,.cards.four{grid-template-columns:1fr 1fr}
     .masonry{columns:2 140px}
     #lb{padding:56px 10px}#lb .prev,#lb .next{top:auto;bottom:12px;transform:none}
   }
@@ -298,23 +300,12 @@
 </div></section>
 
 <section id="work"><div class="wrap">
-  <div class="head reveal"><div class="no">02 — Work</div><h2 class="serif"><span class="hl">Visuals &amp; markets</span></h2><p>Seasonal campaigns, posters and motion pieces, logos and drawings for hippiedippy — plus the flea markets I ran. Designed, edited and sold by me.</p></div>
-  <div class="cards reveal">
-    <div class="card lilac">
-      <span class="mono">Hannam-dong, Seoul · with friends</span>
-      <h4>Pop-up flea market at bar Choneungryeok</h4>
-      <p>My idea. I led a team of three and partnered with the bar to host it. The place was packed — and I sold almost everything I brought.</p>
-    </div>
-    <div class="card">
-      <span class="mono">hippiedippy · 2021</span>
-      <h4>Summer flea market &amp; sample sale</h4>
-      <p>Vintage pieces and samples. I made the posters and the 3D type motion for the announcement.</p>
-    </div>
-    <div class="card">
-      <span class="mono">hippiedippy · Oct 2021</span>
-      <h4>Knit flea market</h4>
-      <p>A knit-themed market. I designed the visual and the motion teaser.</p>
-    </div>
+  <div class="head reveal"><div class="no">02 — Work</div><h2 class="serif"><span class="hl">Visuals</span></h2><p>Everything the brand looked like, made by me: videos, posters, logos and drawings for hippiedippy.</p></div>
+  <div class="cards four reveal">
+    <div class="card"><span class="mono">01 · Video</span><h4>Video</h4><p>Short motion pieces for every sale, season and launch — edited in CapCut, with 3D type and objects made in Blender.</p></div>
+    <div class="card"><span class="mono">02 · Poster</span><h4>Poster</h4><p>Posters for Summer Sale, Black Friday, Season Off, Christmas and our flea markets.</p></div>
+    <div class="card"><span class="mono">03 · Logo</span><h4>Logo</h4><p>Lettering and logos for hippiedippy — clay, chrome, spiral and 3D versions.</p></div>
+    <div class="card"><span class="mono">04 · Drawing</span><h4>Drawing</h4><p>Hand-drawn characters, illustrations and patterns made in Procreate.</p></div>
   </div>
   <div class="masonry" style="margin-top:22px">
     <figure><img loading="lazy" src="img/h027.jpg" alt="Summer sale poster"><figcaption>Summer sale</figcaption></figure>
