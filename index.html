@@ -174,6 +174,25 @@
   #ed-bar button.sec{background:#fff}
   body.ed-preview .ed-off{display:none!important}
 
+  /* Danke schön */
+  .danke{position:relative;margin:56px auto 0;max-width:900px;text-align:center;background:#fff;border:2.5px solid var(--neon);border-radius:999px;padding:30px 24px 26px;box-shadow:8px 8px 0 var(--pink)}
+  .danke-txt{font-family:"Unbounded",sans-serif;font-weight:800;font-size:clamp(40px,7vw,104px);line-height:1;letter-spacing:-.04em}
+  .danke-txt span{display:inline-block;-webkit-text-stroke:2px var(--ink);paint-order:stroke fill;animation:bob 2.4s ease-in-out infinite}
+  .danke-txt span:nth-child(3n+1){color:var(--pink)} .danke-txt span:nth-child(3n+2){color:var(--aqua)} .danke-txt span:nth-child(3n){color:var(--lime)}
+  .danke-txt span:nth-child(1){animation-delay:0s}.danke-txt span:nth-child(2){animation-delay:.08s}.danke-txt span:nth-child(3){animation-delay:.16s}.danke-txt span:nth-child(4){animation-delay:.24s}.danke-txt span:nth-child(5){animation-delay:.32s}.danke-txt span:nth-child(6){animation-delay:.4s}.danke-txt span:nth-child(7){animation-delay:.48s}.danke-txt span:nth-child(8){animation-delay:.56s}.danke-txt span:nth-child(9){animation-delay:.64s}.danke-txt span:nth-child(10){animation-delay:.72s}.danke-txt span:nth-child(11){animation-delay:.8s}
+  .danke-txt .bang{color:var(--pink)!important;transform:rotate(12deg)}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .danke-sub{font-family:"Space Mono",monospace;font-size:14px;margin-top:12px;color:var(--ink)}
+  .sticker{position:absolute;font-size:34px;line-height:1;-webkit-text-stroke:1.5px var(--ink);animation:spin 6s linear infinite}
+  .s1{left:4%;top:-20px;color:var(--pink);animation:bob 2s ease-in-out infinite}
+  .s2{right:6%;top:-24px;color:var(--lime);font-size:44px}
+  .s3{left:-14px;bottom:10px;color:var(--aqua);font-size:40px}
+  .s4{right:-12px;bottom:-14px;color:var(--pink);font-size:30px;animation-duration:4s}
+  .s5{left:44%;bottom:-22px;color:var(--baby);font-size:30px;animation:bob 2.6s ease-in-out infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.danke-txt span,.sticker{animation:none}}
+  @media (max-width:600px){.danke{border-radius:28px}.sticker{font-size:24px}}
+
   .reveal{transition:opacity .8s ease,transform .8s ease}
   @media (prefers-reduced-motion:reduce){.reveal{transition:none}html.js .reveal:not(.in){opacity:1;transform:none}.marquee div{animation:none}}
 
@@ -452,6 +471,11 @@
   <div class="row">
     <a class="btn" href="https://www.instagram.com/b02_apt" target="_blank">Instagram DM @b02_apt</a>
     <a class="btn ghost" href="mailto:sms940574@gmail.com">sms940574@gmail.com</a>
+  </div>
+  <div class="danke" aria-label="Danke schön">
+    <span class="sticker s1">♥</span><span class="sticker s2">★</span><span class="sticker s3">✿</span><span class="sticker s4">★</span><span class="sticker s5">♡</span>
+    <p class="danke-txt"><span>D</span><span>a</span><span>n</span><span>k</span><span>e</span>&nbsp;<span>s</span><span>c</span><span>h</span><span>ö</span><span>n</span><span class="bang">!</span></p>
+    <p class="danke-sub">thank you for looking ⸜(｡˃ ᵕ ˂ )⸝♡ — see you in Berlin</p>
   </div>
   <small>Misuk (Suki) Seo · Berlin · 2026</small>
 </div></footer>
