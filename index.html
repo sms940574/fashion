@@ -151,6 +151,19 @@
   #lb .cap{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:var(--mint);font-family:"Space Mono",monospace;font-size:12px}
 
   html.js .reveal:not(.in){opacity:0;transform:translateY(20px)}
+  /* edit mode (?edit) */
+  .ed-x{position:absolute;top:8px;left:8px;z-index:5;width:34px;height:34px;border-radius:99px;border:2px solid var(--ink);background:#fff;color:var(--ink);font:700 16px "Space Mono",monospace;cursor:pointer;display:none;place-items:center}
+  body.editing .ed-x{display:grid}
+  body.editing .ed-off{opacity:.25;filter:grayscale(1)}
+  body.editing .ed-off .ed-x{background:var(--pink);color:#fff;opacity:1}
+  body.editing .ed-off::after{content:"REMOVE";position:absolute;inset:auto 0 45% 0;text-align:center;font:800 18px "Unbounded",sans-serif;color:var(--pink);z-index:4}
+  .ed-off{position:relative}
+  #ed-bar{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:90;display:none;gap:10px;align-items:center;background:#fff;border:2px solid var(--ink);border-radius:99px;padding:8px 10px 8px 18px;box-shadow:5px 5px 0 var(--pink);font:700 13px "Space Mono",monospace}
+  body.editing #ed-bar{display:flex}
+  #ed-bar button{font:700 12px "Space Mono",monospace;border:2px solid var(--ink);border-radius:99px;padding:8px 14px;cursor:pointer;background:var(--lime)}
+  #ed-bar button.sec{background:#fff}
+  body.ed-preview .ed-off{display:none!important}
+
   .reveal{transition:opacity .8s ease,transform .8s ease}
   @media (prefers-reduced-motion:reduce){.reveal{transition:none}html.js .reveal:not(.in){opacity:1;transform:none}.marquee div{animation:none}}
 
@@ -240,7 +253,7 @@
     </div>
   </div>
   <div class="more">
-    <button class="more-btn" type="button" aria-expanded="false" aria-controls="more-looks"><span class="star">★</span> More looks <span class="cnt">+28</span></button>
+    <button class="more-btn" type="button" aria-expanded="false" aria-controls="more-looks"><span class="star">★</span> More looks <span class="cnt">+38</span></button>
     <div class="masonry more-grid" id="more-looks" hidden>
       <figure><img loading="lazy" src="img/l018.jpg" alt="Look"></figure>
       <figure><img loading="lazy" src="img/h013.jpg" alt="Look"></figure>
@@ -270,6 +283,16 @@
       <figure><img loading="lazy" src="img/h006.jpg" alt="Look"></figure>
       <figure><img loading="lazy" src="img/h002.jpg" alt="Look"></figure>
       <figure><img loading="lazy" src="img/h019.jpg" alt="Look"></figure>
+      <figure><img loading="lazy" src="img/h003.jpg" alt="Look"></figure>
+      <figure><img loading="lazy" src="img/h005.jpg" alt="Look"></figure>
+      <figure><img loading="lazy" src="img/h011.jpg" alt="Look"></figure>
+      <figure><img loading="lazy" src="img/h014.jpg" alt="Look"></figure>
+      <figure><img loading="lazy" src="img/h017.jpg" alt="Look"></figure>
+      <figure><img loading="lazy" src="img/h032.jpg" alt="Look"></figure>
+      <figure><img loading="lazy" src="img/h034.jpg" alt="Look"></figure>
+      <figure><img loading="lazy" src="img/h039.jpg" alt="Look"></figure>
+      <figure><img loading="lazy" src="img/h070.jpg" alt="Look"></figure>
+      <figure><img loading="lazy" src="img/h074.jpg" alt="Look"></figure>
     </div>
   </div>
 </div></section>
@@ -332,6 +355,39 @@
     <figure><img loading="lazy" src="img/flea-top.jpg" alt="Flea market poster: tops"></figure>
     <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/flea-type.mp4"></video></div>
     <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/knit-flea.mp4"></video></div>
+    <figure><img loading="lazy" src="img/h001.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h018.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h023.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h024.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h029.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h030.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h035.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h036.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h043.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h046.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h047.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h048.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h049.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h050.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h051.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h052.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h053.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h054.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h055.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h056.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h057.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h059.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h060.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h061.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h062.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h065.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h066.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h073.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h085.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h086.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h087.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h088.jpg" alt="hippiedippy graphic"></figure>
+    <figure><img loading="lazy" src="img/h089.jpg" alt="hippiedippy graphic"></figure>
   </div>
 </div></section>
 
@@ -427,6 +483,47 @@
   (function(){const b=document.querySelector('.more-btn'),g=document.getElementById('more-looks');if(!b)return;
     b.addEventListener('click',()=>{const open=g.hasAttribute('hidden');if(open){g.removeAttribute('hidden');g.querySelectorAll('img').forEach(i=>i.loading='eager')}else{g.setAttribute('hidden','');b.scrollIntoView({block:'center',behavior:'smooth'})}
       b.setAttribute('aria-expanded',open);b.firstElementChild.nextSibling.textContent=open?' Less looks ':' More looks ';});})();
+
+  // Edit mode: open the page with ?edit to mark items for removal
+  (function(){
+    if(!new URLSearchParams(location.search).has('edit'))return;
+    document.body.classList.add('editing');
+    const KEY='suki-fashion-remove'; let set;
+    try{set=new Set(JSON.parse(localStorage.getItem(KEY)||'[]'))}catch(_){set=new Set()}
+    const save=()=>{try{localStorage.setItem(KEY,JSON.stringify([...set]))}catch(_){} document.getElementById('ed-n').textContent=set.size+' selected'};
+    const items=[...document.querySelectorAll('.masonry>figure,.masonry>.vid,.collage>figure')];
+    const keyOf=el=>{const m=el.querySelector('img,video');return (m.getAttribute('src')||'').split('/').pop()};
+    items.forEach(el=>{const k=keyOf(el); if(!k)return; el.classList.toggle('ed-off',set.has(k));
+      const b=document.createElement('button'); b.className='ed-x'; b.type='button'; b.textContent='✕'; b.title='Mark for removal';
+      b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation(); set.has(k)?set.delete(k):set.add(k); el.classList.toggle('ed-off',set.has(k)); save();},true);
+      el.appendChild(b);});
+    const g=document.getElementById('more-looks'); if(g){g.removeAttribute('hidden');g.querySelectorAll('img').forEach(i=>i.loading='eager')}
+    document.getElementById('ed-copy').onclick=async()=>{const t='Remove from fashion portfolio:\n'+[...set].join('\n'); try{await navigator.clipboard.writeText(t);document.getElementById('ed-copy').textContent='Copied ✓'}catch(_){prompt('Copy this:',t)} setTimeout(()=>document.getElementById('ed-copy').textContent='Copy list for Claude',1500)};
+    document.getElementById('ed-prev').onclick=()=>{document.body.classList.toggle('ed-preview')};
+    document.getElementById('ed-clear').onclick=()=>{if(!confirm('Clear all marks?'))return; set.clear(); items.forEach(el=>el.classList.remove('ed-off')); save()};
+    save();
+  })();
+
+  // Edit mode: open the page with ?edit to mark items for removal
+  (function(){
+    if(!new URLSearchParams(location.search).has('edit'))return;
+    document.body.classList.add('editing');
+    const KEY='suki-fashion-remove'; let set;
+    try{set=new Set(JSON.parse(localStorage.getItem(KEY)||'[]'))}catch(_){set=new Set()}
+    const save=()=>{try{localStorage.setItem(KEY,JSON.stringify([...set]))}catch(_){} document.getElementById('ed-n').textContent=set.size+' selected'};
+    const items=[...document.querySelectorAll('.masonry>figure,.masonry>.vid,.collage>figure')];
+    const keyOf=el=>{const m=el.querySelector('img,video');return (m.getAttribute('src')||'').split('/').pop()};
+    items.forEach(el=>{const k=keyOf(el); if(!k)return; el.classList.toggle('ed-off',set.has(k));
+      const b=document.createElement('button'); b.className='ed-x'; b.type='button'; b.textContent='✕'; b.title='Mark for removal';
+      b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation(); set.has(k)?set.delete(k):set.add(k); el.classList.toggle('ed-off',set.has(k)); save();},true);
+      el.appendChild(b);});
+    const g=document.getElementById('more-looks'); if(g){g.removeAttribute('hidden');g.querySelectorAll('img').forEach(i=>i.loading='eager')}
+    document.getElementById('ed-copy').onclick=async()=>{const t='Remove from fashion portfolio:\n'+[...set].join('\n'); try{await navigator.clipboard.writeText(t);document.getElementById('ed-copy').textContent='Copied ✓'}catch(_){prompt('Copy this:',t)} setTimeout(()=>document.getElementById('ed-copy').textContent='Copy list for Claude',1500)};
+    document.getElementById('ed-prev').onclick=()=>{document.body.classList.toggle('ed-preview')};
+    document.getElementById('ed-clear').onclick=()=>{if(!confirm('Clear all marks?'))return; set.clear(); items.forEach(el=>el.classList.remove('ed-off')); save()};
+    save();
+  })();
 </script>
+<div id="ed-bar"><span id="ed-n">0 selected</span><button id="ed-copy" type="button">Copy list for Claude</button><button id="ed-prev" class="sec" type="button">Preview</button><button id="ed-clear" class="sec" type="button">Clear</button></div>
 </body>
 </html>
