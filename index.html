@@ -420,6 +420,7 @@
   <div class="cap"></div>
 </div>
 
+<div id="ed-bar"><span id="ed-n">0 selected</span><button id="ed-copy" type="button">Copy list for Claude</button><button id="ed-undo" class="sec" type="button">Undo</button><button id="ed-prev" class="sec" type="button">Show removed</button><button id="ed-clear" class="sec" type="button">Clear</button></div>
 <script>
   setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')),2500);
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
@@ -481,43 +482,24 @@
   // Edit mode: open the page with ?edit to mark items for removal
   (function(){
     if(!new URLSearchParams(location.search).has('edit'))return;
-    document.body.classList.add('editing');
+    document.body.classList.add('editing','ed-preview'); const hist=[];
     const KEY='suki-fashion-remove'; let set;
     try{set=new Set(JSON.parse(localStorage.getItem(KEY)||'[]'))}catch(_){set=new Set()}
-    const save=()=>{try{localStorage.setItem(KEY,JSON.stringify([...set]))}catch(_){} document.getElementById('ed-n').textContent=set.size+' selected'};
+    const save=()=>{try{localStorage.setItem(KEY,JSON.stringify([...set]))}catch(_){} document.getElementById('ed-n').textContent=set.size+' removed'};
     const items=[...document.querySelectorAll('.masonry>figure,.masonry>.vid,.collage>figure,.trio>figure')];
     const keyOf=el=>{const m=el.querySelector('img,video');return (m.getAttribute('src')||'').split('/').pop()};
     items.forEach(el=>{const k=keyOf(el); if(!k)return; el.classList.toggle('ed-off',set.has(k));
       const b=document.createElement('button'); b.className='ed-x'; b.type='button'; b.textContent='✕'; b.title='Mark for removal';
-      b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation(); set.has(k)?set.delete(k):set.add(k); el.classList.toggle('ed-off',set.has(k)); save();},true);
+      b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation(); if(set.has(k)){set.delete(k)}else{set.add(k);hist.push([k,el])} el.classList.toggle('ed-off',set.has(k)); save();},true);
       el.appendChild(b);});
     const g=document.getElementById('more-looks'); if(g){g.removeAttribute('hidden');g.querySelectorAll('img').forEach(i=>i.loading='eager')}
     document.getElementById('ed-copy').onclick=async()=>{const t='Remove from fashion portfolio:\n'+[...set].join('\n'); try{await navigator.clipboard.writeText(t);document.getElementById('ed-copy').textContent='Copied ✓'}catch(_){prompt('Copy this:',t)} setTimeout(()=>document.getElementById('ed-copy').textContent='Copy list for Claude',1500)};
-    document.getElementById('ed-prev').onclick=()=>{document.body.classList.toggle('ed-preview')};
+    document.getElementById('ed-prev').onclick=e=>{const on=document.body.classList.toggle('ed-preview'); e.target.textContent=on?'Show removed':'Hide removed'};
+    document.getElementById('ed-undo').onclick=()=>{const h=hist.pop(); if(!h)return; set.delete(h[0]); h[1].classList.remove('ed-off'); save()};
     document.getElementById('ed-clear').onclick=()=>{if(!confirm('Clear all marks?'))return; set.clear(); items.forEach(el=>el.classList.remove('ed-off')); save()};
     save();
   })();
 
-  // Edit mode: open the page with ?edit to mark items for removal
-  (function(){
-    if(!new URLSearchParams(location.search).has('edit'))return;
-    document.body.classList.add('editing');
-    const KEY='suki-fashion-remove'; let set;
-    try{set=new Set(JSON.parse(localStorage.getItem(KEY)||'[]'))}catch(_){set=new Set()}
-    const save=()=>{try{localStorage.setItem(KEY,JSON.stringify([...set]))}catch(_){} document.getElementById('ed-n').textContent=set.size+' selected'};
-    const items=[...document.querySelectorAll('.masonry>figure,.masonry>.vid,.collage>figure,.trio>figure')];
-    const keyOf=el=>{const m=el.querySelector('img,video');return (m.getAttribute('src')||'').split('/').pop()};
-    items.forEach(el=>{const k=keyOf(el); if(!k)return; el.classList.toggle('ed-off',set.has(k));
-      const b=document.createElement('button'); b.className='ed-x'; b.type='button'; b.textContent='✕'; b.title='Mark for removal';
-      b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation(); set.has(k)?set.delete(k):set.add(k); el.classList.toggle('ed-off',set.has(k)); save();},true);
-      el.appendChild(b);});
-    const g=document.getElementById('more-looks'); if(g){g.removeAttribute('hidden');g.querySelectorAll('img').forEach(i=>i.loading='eager')}
-    document.getElementById('ed-copy').onclick=async()=>{const t='Remove from fashion portfolio:\n'+[...set].join('\n'); try{await navigator.clipboard.writeText(t);document.getElementById('ed-copy').textContent='Copied ✓'}catch(_){prompt('Copy this:',t)} setTimeout(()=>document.getElementById('ed-copy').textContent='Copy list for Claude',1500)};
-    document.getElementById('ed-prev').onclick=()=>{document.body.classList.toggle('ed-preview')};
-    document.getElementById('ed-clear').onclick=()=>{if(!confirm('Clear all marks?'))return; set.clear(); items.forEach(el=>el.classList.remove('ed-off')); save()};
-    save();
-  })();
 </script>
-<div id="ed-bar"><span id="ed-n">0 selected</span><button id="ed-copy" type="button">Copy list for Claude</button><button id="ed-prev" class="sec" type="button">Preview</button><button id="ed-clear" class="sec" type="button">Clear</button></div>
 </body>
 </html>
