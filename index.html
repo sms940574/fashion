@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js')</script>
 <style>
-  :root{--paper:#f3f0e9;--ink:#191816;--muted:#76726a;--line:#d9d4c9;--lilac:#b9a6e8;--lilac-soft:#ebe5f8;--mint:#9fd8c8;--nav:60px}
+  :root{--paper:#fffafc;--ink:#1a1a1f;--muted:#7a7480;--line:#f1d6e3;--pink:#ff6fae;--pink-soft:#ffe1ee;--yellow:#ffe25c;--yellow-soft:#fff6c7;--mint:#5fe0bf;--mint-soft:#d9fbf1;--lilac:var(--pink);--lilac-soft:var(--pink-soft);--nav:60px}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;scroll-padding-top:var(--nav)}
   body{background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
@@ -19,29 +19,31 @@
   .serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:-.01em}
   .mono{font-family:"DM Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
 
-  nav{position:sticky;top:0;z-index:20;height:var(--nav);background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav{position:sticky;top:0;z-index:20;height:var(--nav);background:color-mix(in srgb,#fff 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
-  .logo{font-family:"Instrument Serif",serif;font-size:26px;text-decoration:none;font-style:italic}
+  .logo{font-family:"Instrument Serif",serif;font-size:26px;text-decoration:none;font-style:italic;color:var(--pink)}
   nav ul{display:flex;gap:24px;list-style:none}
   nav ul a{text-decoration:none;font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
   nav ul a:hover{color:var(--muted)}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;background:var(--ink);color:var(--paper);text-decoration:none;font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--ink)}
   .btn.ghost{background:transparent;color:var(--ink)}
-  .btn:hover{background:var(--lilac);border-color:var(--lilac);color:var(--ink)}
+  .btn:hover{background:var(--pink);border-color:var(--pink);color:#fff}
 
   /* cover */
   .cover{height:calc(100svh - var(--nav));min-height:620px;display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(18px,3vw,48px);align-items:stretch;padding-top:22px;padding-bottom:22px}
   .cover .text{display:flex;flex-direction:column;justify-content:space-between;padding:8px 0}
   .cover h1{font-size:clamp(76px,11vw,200px);line-height:.86;font-style:italic}
-  .cover h1 span{display:block;font-style:normal}
+  .cover h1 span{display:block;font-style:normal;color:var(--pink)}
   .cover .lead{font-size:clamp(17px,1.35vw,21px);max-width:560px;margin-top:22px}
   .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-  .tag{font-family:"DM Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;padding:6px 11px;border:1px solid var(--ink);border-radius:99px}
+  .tag{font-family:"DM Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border:1.5px solid var(--ink);border-radius:99px;background:#fff}
+  .tags .tag:nth-child(3n+1){background:var(--pink-soft)} .tags .tag:nth-child(3n+2){background:var(--yellow-soft)} .tags .tag:nth-child(3n){background:var(--mint-soft)}
   .cover .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
   .collage{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;min-height:0}
   .collage figure{min-height:0}
   .collage .a{grid-row:span 2;grid-column:span 2}
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);margin-top:20px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:20px}
+  .stats div{border-radius:14px;padding:12px!important} .stats div:nth-child(1){background:var(--pink-soft)} .stats div:nth-child(2){background:var(--yellow-soft)} .stats div:nth-child(3){background:var(--mint-soft)} .stats div:nth-child(4){background:var(--pink-soft)}
   .stats div{padding:12px 12px 0 0}
   .stats b{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(28px,2.6vw,44px);line-height:1;display:block}
   .stats span{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
@@ -51,18 +53,20 @@
   .head{display:grid;grid-template-columns:200px 1fr auto;gap:24px;align-items:end;border-top:1px solid var(--ink);padding-top:14px;margin-bottom:26px}
   .head .no{font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;align-self:start;padding-top:10px}
   .head h2{font-size:clamp(48px,6.4vw,112px);line-height:.9;font-style:italic}
+  .head h2 span.hl{background:linear-gradient(transparent 58%,var(--hl,var(--yellow)) 58%,var(--hl,var(--yellow)) 92%,transparent 92%);padding:0 .08em}
+  #styling{--hl:var(--pink)} #hippiedippy{--hl:var(--yellow)} #campaigns{--hl:var(--mint)} #identity{--hl:var(--pink)} #markets{--hl:var(--yellow)}
   .head p{max-width:520px;color:#3b3934;font-size:15.5px}
 
-  figure{position:relative;background:#e6e1d6;border-radius:6px;overflow:hidden}
+  figure{position:relative;background:#fff0f6;border-radius:6px;overflow:hidden}
   figure img,figure video{width:100%;height:100%;object-fit:contain}
   figure img{cursor:zoom-in}
-  figcaption{position:absolute;left:8px;bottom:8px;font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;background:rgba(243,240,233,.9);padding:3px 8px;border-radius:99px}
+  figcaption{position:absolute;left:8px;bottom:8px;font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--yellow);padding:3px 9px;border-radius:99px}
   /* masonry: natural aspect, never cropped */
   .masonry{columns:5 260px;column-gap:10px}
   .masonry>*{break-inside:avoid;margin-bottom:10px}
   .masonry figure{background:transparent}
   .masonry figure img,.masonry figure video{height:auto}
-  .vid{position:relative;border-radius:6px;overflow:hidden;background:#e6e1d6}
+  .vid{position:relative;border-radius:6px;overflow:hidden;background:#fff0f6}
   .vid video{width:100%;height:auto;cursor:zoom-in}
   .vexp{position:absolute;top:8px;right:8px;z-index:3;width:32px;height:32px;border-radius:99px;border:0;background:rgba(25,24,22,.6);color:#fff;font-size:14px;cursor:pointer;display:grid;place-items:center}
 
@@ -71,26 +75,28 @@
   .role h3{font-size:clamp(30px,2.6vw,44px);line-height:1;font-style:italic;margin-bottom:14px}
   .role ul{list-style:none;border-top:1px solid var(--line)}
   .role li{padding:10px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:110px 1fr;gap:12px;font-size:15px}
+  .role li:nth-child(3n+1) b{color:#e0428a} .role li:nth-child(3n+2) b{color:#b58a00} .role li:nth-child(3n) b{color:#13a07c}
   .role li b{font-family:"DM Mono",monospace;font-weight:400;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
   .note{font-size:14px;color:var(--muted);margin-top:14px}
 
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-  .card{border:1px solid var(--ink);border-radius:8px;padding:18px;background:#f8f6f1}
+  .card{border:1.5px solid var(--ink);border-radius:18px;padding:20px;background:var(--mint-soft)}
   .card .mono{color:var(--muted)}
   .card h4{font-family:"Instrument Serif",serif;font-weight:400;font-size:30px;line-height:1.05;margin:8px 0}
   .card p{font-size:15px}
-  .card.lilac{background:var(--lilac-soft)}
+  .card.lilac{background:var(--pink-soft)}
+  .cards .card:nth-child(3){background:var(--yellow-soft)}
 
   .about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,56px)}
   .about h2{font-size:clamp(52px,6vw,104px);line-height:.92;font-style:italic}
   .about dl{display:grid;grid-template-columns:160px 1fr;border-top:1px solid var(--ink)}
   .about dt,.about dd{padding:12px 0;border-bottom:1px solid var(--line)}
   .about dt{font-family:"DM Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:15px}
-  footer{background:var(--ink);color:var(--paper);padding:70px 0 34px;margin-top:40px}
+  footer{background:var(--pink);color:var(--ink);padding:70px 0 34px;margin-top:40px}
   footer h2{font-size:clamp(56px,8vw,150px);line-height:.88;font-style:italic}
   footer .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-  footer .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}
-  footer .btn.ghost{background:transparent;color:var(--paper)}
+  footer .btn{background:var(--ink);color:#fff;border-color:var(--ink)}
+  footer .btn.ghost{background:var(--yellow);color:var(--ink);border-color:var(--ink)}
   footer small{display:block;margin-top:46px;font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.6}
 
   /* lightbox */
@@ -159,7 +165,7 @@
 </div></header>
 
 <section id="styling"><div class="wrap">
-  <div class="head reveal"><div class="no">01 — Styling</div><h2 class="serif">Looks</h2><p>Every outfit here was put together, modeled and art-directed by me — for hippiedippy and for my own work. Layering, texture and a little bit of strange.</p></div>
+  <div class="head reveal"><div class="no">01 — Styling</div><h2 class="serif"><span class="hl">Looks</span></h2><p>Every outfit here was put together, modeled and art-directed by me — for hippiedippy and for my own work. Layering, texture and a little bit of strange.</p></div>
   <div class="masonry">
     <figure><img loading="lazy" src="img/l018.jpg" alt="Look"></figure>
     <figure><img loading="lazy" src="img/h013.jpg" alt="Look"></figure>
@@ -193,7 +199,7 @@
 </div></section>
 
 <section id="hippiedippy"><div class="wrap">
-  <div class="head reveal"><div class="no">02 — hippiedippy</div><h2 class="serif">The shop</h2><p>An online select shop in Seoul. I was its brand director from 2021 to 2025 and did a bit of everything — which is exactly what a small shop needs.</p></div>
+  <div class="head reveal"><div class="no">02 — hippiedippy</div><h2 class="serif"><span class="hl">The shop</span></h2><p>An online select shop in Seoul. I was its brand director from 2021 to 2025 and did a bit of everything — which is exactly what a small shop needs.</p></div>
   <div class="split">
     <div class="role reveal">
       <h3 class="serif">What I did</h3>
@@ -228,7 +234,7 @@
 </div></section>
 
 <section id="campaigns"><div class="wrap">
-  <div class="head reveal"><div class="no">03 — Campaigns</div><h2 class="serif">Seasons</h2><p>Each season and sale got its own small world: a concept, a poster and a short motion piece for Instagram. Designed and edited by me.</p></div>
+  <div class="head reveal"><div class="no">03 — Campaigns</div><h2 class="serif"><span class="hl">Seasons</span></h2><p>Each season and sale got its own small world: a concept, a poster and a short motion piece for Instagram. Designed and edited by me.</p></div>
   <div class="masonry">
     <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/summer-sale.mp4"></video></div>
     <figure><img loading="lazy" src="img/h027.jpg" alt="Summer sale poster"><figcaption>Summer sale</figcaption></figure>
@@ -251,7 +257,7 @@
 </div></section>
 
 <section id="identity"><div class="wrap">
-  <div class="head reveal"><div class="no">04 — Identity</div><h2 class="serif">Logos &amp; drawings</h2><p>Lettering, 3D logos, patterns and hand-drawn characters made for the brand — in Procreate, CapCut and Blender.</p></div>
+  <div class="head reveal"><div class="no">04 — Identity</div><h2 class="serif"><span class="hl">Logos &amp; drawings</span></h2><p>Lettering, 3D logos, patterns and hand-drawn characters made for the brand — in Procreate, CapCut and Blender.</p></div>
   <div class="masonry">
     <figure><img loading="lazy" src="img/h010.jpg" alt="Clay logo"></figure>
     <div class="vid"><video autoplay muted loop playsinline preload="metadata" src="video/logo3d.mp4"></video></div>
@@ -273,7 +279,7 @@
 </div></section>
 
 <section id="markets"><div class="wrap">
-  <div class="head reveal"><div class="no">05 — Markets</div><h2 class="serif">Flea markets</h2><p>Selling in person is my favourite part: talking to people, reading what they like, and finding the piece that's theirs.</p></div>
+  <div class="head reveal"><div class="no">05 — Markets</div><h2 class="serif"><span class="hl">Flea markets</span></h2><p>Selling in person is my favourite part: talking to people, reading what they like, and finding the piece that's theirs.</p></div>
   <div class="cards reveal">
     <div class="card lilac">
       <span class="mono">Hannam-dong, Seoul · with friends</span>
