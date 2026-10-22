@@ -224,7 +224,11 @@
   }
   @media (max-width:600px){
     .cards,.cards.four{grid-template-columns:1fr}
-    .masonry{columns:2 140px}
+    .masonry{columns:auto!important;display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start}
+    .masonry>*{margin-bottom:0!important}
+    .masonry>.trio,.masonry>.vid{grid-column:span 2}
+    .masonry>figure.sm{width:80%}
+    .more-grid[hidden]{display:none}
     #lb{padding:56px 10px}#lb .prev,#lb .next{top:auto;bottom:12px;transform:none}
   }
 </style>
@@ -239,7 +243,7 @@
     <li><a href="#games">Games</a></li>
     <li><a href="#about">Info</a></li>
   </ul>
-  <a class="btn" href="https://www.instagram.com/b02_apt" target="_blank">DM @b02_apt</a>
+  <a class="btn" href="https://www.instagram.com/unitb02/" target="_blank">DM @unitb02</a>
 </div></nav>
 
 <header id="top"><div class="wrap cover">
